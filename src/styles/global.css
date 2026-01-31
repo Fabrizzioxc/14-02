@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.serif-font { font-family: "Playfair Display", serif; }
+
+/* Envelope */
+.envelope-flap{
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transition: transform 0.6s ease-in-out, z-index 0.6s;
+  transform-origin: top;
+  z-index: 20;
+}
+.envelope-pocket{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 10;
+}
+.is-open .envelope-flap{
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* Pulse */
+@keyframes pulse-soft { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* Hearts */
+@keyframes heartFall{
+  0%{transform:translateY(-10vh) translateX(0) rotate(0); opacity:1}
+  100%{transform:translateY(110vh) translateX(0) rotate(0); opacity:0}
+}
+.heart-particle{
+  position:fixed;
+  top:-10%;
+  z-index:40;
+  pointer-events:none;
+  color:#BAE6FD;
+  animation-name: heartFall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
