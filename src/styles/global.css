@@ -40,3 +40,25 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+
+/* Success enter (suave) */
+.success-enter {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(.2,.8,.2,1);
+}
+
+.success-enter.is-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.success-enter {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(.2,.8,.2,1);
+}
+.success-enter.is-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
